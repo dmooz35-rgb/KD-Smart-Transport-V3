@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "vercel --prod"
-  },
+    "deploy": "vercel --prod",
   "dependencies": {
     "next": "^14.0.0",
     "react": "^18.2.0",
@@ -25,7 +24,6 @@
     "zod": "^3.22.0",
     "next-auth": "^4.24.0",
     "neon": "^1.0.0"
-  },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
