@@ -1,17 +1,25 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   webpack: (config, { isServer }) => {
-    config.externals.push({
-      'bufferutil': 'bufferutil',
-      'utf-8-validate': 'utf-8-validate',
-    });
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+    };
+
+    if (!isServer) {
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        three: {
+          test: /[\\/]node_modules[\\/]three[\\/]/,
+          name: 'three',
+          priority: 20,
+        },
+      };
+    }
+
     return config;
   },
-  experimental: {
-    optimizePackageImports: ['three'],
-  },
 };
-
-export default nextConfig;
