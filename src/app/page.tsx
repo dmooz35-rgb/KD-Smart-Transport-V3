@@ -6,6 +6,7 @@ import { CyberpunkButton, NeonText, GlassCard } from '@/components/ui/CyberpunkU
 import { Interactive3D, HolographicEffect } from '@/components/3d/Interactive3D'
 import Link from 'next/link'
 import Map, { Marker } from "react-map-gl"
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default function Home() {
   const features = [
