@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { CyberpunkButton, NeonText, GlassCard } from '@/components/ui/CyberpunkUI'
 import { Interactive3D, HolographicEffect } from '@/components/3d/Interactive3D'
 import Link from 'next/link'
+import Map, { Marker } from "react-map-gl"
 
 export default function Home() {
   const features = [
@@ -181,5 +182,17 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  <div style={{ width: "100%", height: "500px", marginTop: "40px" }}>
+  <Map
+    mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+    initialViewState={{
+      longitude: 46.6753,
+      latitude: 24.7136,
+      zoom: 10
+    }}
+    mapStyle="mapbox://styles/mapbox/dark-v11"
+  >
+    <Marker longitude={46.6753} latitude={24.7136} color="red" />
+  </Map>
+</div>
 }
