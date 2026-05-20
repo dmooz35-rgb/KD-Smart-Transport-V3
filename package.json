@@ -1,6 +1,7 @@
 {
   "name": "kd-smart-transport-v3",
   "version": "3.0.0",
+  "private": true,
   "description": "Cyberpunk neon UI smart transport platform",
   "type": "module",
   "scripts": {
@@ -11,31 +12,31 @@
     "deploy": "vercel --prod"
   },
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.0",
+    "@react-three/drei": "^9.88.0",
+    "@react-three/fiber": "^8.14.0",
     "@supabase/supabase-js": "^2.38.0",
     "axios": "^1.6.0",
-    "three": "^0.158.0",
-    "@react-three/fiber": "^8.14.0",
-    "@react-three/drei": "^9.88.0",
     "framer-motion": "^10.16.0",
-    "zustand": "^4.4.0",
-    "zod": "^3.22.0",
-    "next-auth": "^4.24.0",
     "mapbox-gl": "^3.1.0",
-    "react-map-gl": "^7.1.7"
+    "next": "^14.0.0",
+    "next-auth": "^4.24.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-map-gl": "^7.1.7",
+    "three": "^0.158.0",
+    "tailwindcss": "^3.3.0",
+    "zod": "^3.22.0",
+    "zustand": "^4.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "typescript": "^5.2.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0",
-    "eslint": "^8.4.9",
-    "eslint-config-next": "^14.0.0"
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.0.0",
+    "postcss": "^8.4.31",
+    "typescript": "^5.2.2"
   },
   "engines": {
     "node": "18.x"
