@@ -2,7 +2,7 @@
   "name": "kd-smart-transport-v3",
   "version": "3.0.0",
   "private": true,
-  "description": "Cyberpunk neon UI smart transport platform",
+  "description": "Cyberpunk neon UI smart",
   "type": "module",
   "scripts": {
     "dev": "next dev",
