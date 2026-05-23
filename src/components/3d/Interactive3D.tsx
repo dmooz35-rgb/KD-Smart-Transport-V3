@@ -2,7 +2,7 @@
 
 import React, { useRef, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Box, Sphere, Torus } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
 interface AnimatedBoxProps {
@@ -21,14 +21,15 @@ function AnimatedBox({ color = '#00ffff' }: AnimatedBoxProps) {
   })
 
   return (
-    <Box ref={meshRef} args={[2, 2, 2]}>
+    <mesh ref={meshRef}>
+      <boxGeometry args={[2, 2, 2]} />
       <meshStandardMaterial
         color={color}
         wireframe
         emissive={color}
         emissiveIntensity={0.5}
       />
-    </Box>
+    </mesh>
   )
 }
 
@@ -43,21 +44,22 @@ function AnimatedSphere({ color = '#ff00ff' }: AnimatedBoxProps) {
   })
 
   return (
-    <Sphere ref={meshRef} args={[1.5, 32, 32]}>
+    <mesh ref={meshRef}>
+      <sphereGeometry args={[1.5, 32, 32]} />
       <meshStandardMaterial
         color={color}
         wireframe
         emissive={color}
         emissiveIntensity={0.3}
       />
-    </Sphere>
+    </mesh>
   )
 }
 
 function AnimatedTorus({ color = '#00ff00' }: AnimatedBoxProps) {
   const meshRef = useRef<THREE.Mesh>(null)
 
-  useFrame((state) => {
+  useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.x += 0.01
       meshRef.current.rotation.z += 0.01
@@ -65,14 +67,15 @@ function AnimatedTorus({ color = '#00ff00' }: AnimatedBoxProps) {
   })
 
   return (
-    <Torus ref={meshRef} args={[1.5, 0.5, 16, 100]}>
+    <mesh ref={meshRef}>
+      <torusGeometry args={[1.5, 0.5, 16, 100]} />
       <meshStandardMaterial
         color={color}
         wireframe
         emissive={color}
         emissiveIntensity={0.5}
       />
-    </Torus>
+    </mesh>
   )
 }
 

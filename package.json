@@ -3,7 +3,6 @@
   "version": "3.0.0",
   "private": true,
   "description": "Cyberpunk neon UI smart",
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
