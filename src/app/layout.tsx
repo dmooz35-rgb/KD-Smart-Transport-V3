@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${orbitron.variable} ${spaceMono.variable}`}>
       <head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">

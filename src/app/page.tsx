@@ -171,6 +171,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-4xl font-bold text-center mb-8"
+          >
+            <NeonText color="cyan">Service Area</NeonText>
+          </motion.h2>
+          <div className="w-full h-[500px] rounded-lg overflow-hidden border border-cyan-500/30">
+            <Map
+              mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+              initialViewState={{
+                longitude: 46.6753,
+                latitude: 24.7136,
+                zoom: 10
+              }}
+              mapStyle="mapbox://styles/mapbox/dark-v11"
+            >
+              <Marker longitude={46.6753} latitude={24.7136} color="red" />
+            </Map>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-slate-950 border-t border-cyan-500/20 py-8 px-4">
         <div className="max-w-7xl mx-auto text-center text-gray-400">
@@ -183,17 +209,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  <div style={{ width: "100%", height: "500px", marginTop: "40px" }}>
-  <Map
-    mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
-    initialViewState={{
-      longitude: 46.6753,
-      latitude: 24.7136,
-      zoom: 10
-    }}
-    mapStyle="mapbox://styles/mapbox/dark-v11"
-  >
-    <Marker longitude={46.6753} latitude={24.7136} color="red" />
-  </Map>
-</div>
+  )
 }

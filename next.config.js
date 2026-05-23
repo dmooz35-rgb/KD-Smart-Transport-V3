@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   webpack: (config, { isServer }) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -10,7 +9,7 @@ const nextConfig = {
       tls: false,
     };
 
-    if (!isServer) {
+    if (!isServer && config.optimization.splitChunks && typeof config.optimization.splitChunks === 'object') {
       config.optimization.splitChunks.cacheGroups = {
         ...config.optimization.splitChunks.cacheGroups,
         three: {
